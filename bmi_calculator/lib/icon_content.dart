@@ -18,10 +18,10 @@ class IconContent extends StatelessWidget {
       children: [
         Icon(
           icon,
-          size: 80,
+          size: 28,
         ),
         SizedBox(
-          height: 15,
+          height: 8,
         ),
         Text(
           label,
