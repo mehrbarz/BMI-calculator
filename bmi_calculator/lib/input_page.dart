@@ -142,7 +142,8 @@ class _InputPagePageState extends State<InputPagePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'WEIGHT',style: kLabelTextStyle,
+                          'WEIGHT',
+                          style: kLabelTextStyle,
                         ),
                         Text(
                           weight.toString(),
@@ -151,13 +152,17 @@ class _InputPagePageState extends State<InputPagePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            RoundIconButton(),
+                            SizedBox(
+                              width: 10,
+                            ),
                             FloatingActionButton(
                               backgroundColor: Color(0xFF4c4f4e),
-                              child: Icon(Icons.add, color: Colors.white,),),
-                            SizedBox(width: 10,),
-                            FloatingActionButton(
-                              backgroundColor: Color(0xFF4c4f4e),
-                              child: Icon(Icons.add, color: Colors.white,),),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
                           ],
                         )
                       ],
@@ -179,5 +184,21 @@ class _InputPagePageState extends State<InputPagePage> {
             )
           ],
         ));
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: () {},
+      elevation: 8.0,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4c4f4e),
+    );
   }
 }
