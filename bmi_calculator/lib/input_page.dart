@@ -17,6 +17,7 @@ class InputPagePage extends StatefulWidget {
 
 class _InputPagePageState extends State<InputPagePage> {
   int height = 180;
+  int weight = 50;
 
   Gender selectedGender;
   // Color maleCardColor = inactiveCardColor;
@@ -137,6 +138,30 @@ class _InputPagePageState extends State<InputPagePage> {
                 Expanded(
                   child: ReusableCard(
                     colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              backgroundColor: Color(0xFF4c4f4e),
+                              child: Icon(Icons.add, color: Colors.white,),),
+                            SizedBox(width: 10,),
+                            FloatingActionButton(
+                              backgroundColor: Color(0xFF4c4f4e),
+                              child: Icon(Icons.add, color: Colors.white,),),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
