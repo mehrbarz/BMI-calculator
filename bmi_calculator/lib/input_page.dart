@@ -1,9 +1,11 @@
+import 'package:bmi_calculator/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
+import 'results_page.dart';
 
 enum Gender {
   male,
@@ -162,7 +164,7 @@ class _InputPagePageState extends State<InputPagePage> {
                               },
                             ),
                             SizedBox(
-                              width: 80,
+                              width: 10,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
@@ -204,7 +206,7 @@ class _InputPagePageState extends State<InputPagePage> {
                               },
                             ),
                             SizedBox(
-                              width: 80,
+                              width: 10,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
@@ -222,11 +224,17 @@ class _InputPagePageState extends State<InputPagePage> {
                 ),
               ],
             )),
-            Container(
-              color: kBottomContainerColor,
-              margin: EdgeInsets.only(top: 10),
-              width: double.infinity,
-              height: KBottomContainerHeight,
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> ResultsPage()));
+              },
+              child: Container(
+                child: Text('CALCULATE'),
+                color: kBottomContainerColor,
+                margin: EdgeInsets.only(top: 10),
+                width: double.infinity,
+                height: KBottomContainerHeight,
+              ),
             )
           ],
         ));
@@ -234,7 +242,7 @@ class _InputPagePageState extends State<InputPagePage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon, this.onPressed});
+  RoundIconButton({@required this.icon, @required this.onPressed});
 
   final IconData icon;
   final Function onPressed;
