@@ -5,7 +5,14 @@ import 'buttom_button.dart';
 
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({Key key}) : super(key: key);
+
+  ResultsPage({@required this.bmiResult, @required this.interpretation , this.resultText});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +43,15 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Normal',
+                    resultText,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18.6',
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'Your BMI is low, You should gain weight.',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   )
